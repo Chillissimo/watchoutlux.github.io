@@ -1,16 +1,246 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Watch Out Lux — a private watch club based in Luxembourg." />
   <title>Watch Out Lux</title>
+
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { font-size: 48px; margin-bottom: 10px; }
-    p { font-size: 18px; color: #555; }
+    :root{
+      --bg:#0b0b0c;
+      --fg:#f2f2f2;
+      --muted:#bdbdbd;
+      --line:#2a2a2f;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1080px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#0b0b0c;
+      color:var(--fg);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+
+    a{color:inherit;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--max);margin:auto;padding:28px 18px 60px}
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-bottom:26px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+
+    .mark{
+      width:34px;height:34px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+    }
+
+    .nav{
+      display:flex;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .btn{
+      border:1px solid var(--line);
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      font-size:14px;
+    }
+
+    .btn.primary{
+      background:var(--fg);
+      color:#0b0b0c;
+      border-color:var(--fg);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+    }
+
+    @media(max-width:860px){
+      .hero{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.1;
+    }
+
+    .lead{color:var(--muted)}
+
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+
+    .side{display:flex;flex-direction:column;gap:16px}
+
+    .emblem{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:40px;
+      text-align:center;
+    }
+
+    .emblem h2{
+      margin:0;
+      letter-spacing:1.4px;
+    }
+
+    .section{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    @media(max-width:860px){
+      .section{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+
+    footer{
+      margin-top:40px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media(max-width:860px){
+      footer{flex-direction:column;gap:12px}
+    }
   </style>
 </head>
+
 <body>
-  <h1>Watch Out Lux</h1>
-  <p>Luxembourg Watch Club</p>
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark">W</div>
+      Watch Out Lux
+    </div>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#join">Join</a>
+      <a href="https://www.instagram.com/watch_out_lux/" target="_blank">Instagram</a>
+    </nav>
+
+    <a class="btn" href="#join">Request invite</a>
+  </header>
+
+  <main class="hero">
+    <section class="panel">
+      <h1>Watch Out Lux</h1>
+      <p class="lead">
+        A private watch club based in Luxembourg. Focused on craftsmanship,
+        collecting culture, and meaningful conversations.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary"
+           href="mailto:watchoutlux@gmail.com?subject=Watch%20Out%20Lux%20—%20Join%20request">
+          Request invite
+        </a>
+
+        <a class="btn"
+           href="https://www.instagram.com/watch_out_lux/"
+           target="_blank">
+          Instagram
+        </a>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="emblem">
+        <h2>WATCH OUT LUX</h2>
+        <p class="lead">Luxembourg Watch Club</p>
+      </div>
+    </aside>
+  </main>
+
+  <section class="section" id="about">
+    <div class="card">
+      <h3>What it is</h3>
+      <p>A curated community for people who appreciate watches beyond hype.</p>
+    </div>
+    <div class="card">
+      <h3>What we do</h3>
+      <p>Small meetups, discussions, learning and shared passion.</p>
+    </div>
+    <div class="card">
+      <h3>Access</h3>
+      <p>Invite or request-based membership.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="join" style="margin-top:26px">
+    <h2>Join the club</h2>
+    <p class="lead">
+      Send us a short introduction and your interest in watches.
+    </p>
+
+    <a class="btn primary"
+       href="mailto:watchoutlux@gmail.com?subject=Watch%20Out%20Lux%20—%20Join%20request">
+      Email us
+    </a>
+  </section>
+
+  <footer>
+    <div>
+      <strong>Watch Out Lux</strong><br>
+      Luxembourg Watch Club
+    </div>
+
+    <div>
+      <div>Email: <a href="mailto:watchoutlux@gmail.com">watchoutlux@gmail.com</a></div>
+      <div>Instagram:
+        <a href="https://www.instagram.com/watch_out_lux/" target="_blank">
+          @watch_out_lux
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>
